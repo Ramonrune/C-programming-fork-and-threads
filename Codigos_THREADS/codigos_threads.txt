@@ -1,0 +1,175 @@
+/*************************************************************************************************** 
+prog01.c - Exemplo de como utilizar a instrucao pthread_create e pthread_join
+****************************************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+void* filho (void* null) {
+   printf("Processo-Filho: Iniciando Execucao.\n");
+   sleep(5);
+   printf("Processo-Filho: Encerrando Execucao.\n");	
+}
+
+main() {
+  pthread_t	thread_id;
+  system("clear");
+  printf("Processo-Pai: Iniciando Execucao.\n");
+  pthread_create(&thread_id,NULL,&filho,NULL);
+  printf("Processo-Pai: Encerrando Execucao.\n");  
+}
+
+/*************************************************************************************************** 
+prog02.c - Exemplo de como utilizar a instrucao pthread_create e pthread_join
+****************************************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+void* filho (void* null) {
+   printf("Processo-Filho: Iniciando Execucao.\n");
+   sleep(5);
+   printf("Processo-Filho: Encerrando Execucao.\n");	
+}
+
+main() {
+  pthread_t	thread_id;
+  system("clear");
+  printf("Processo-Pai: Iniciando Execucao.\n");
+  pthread_create(&thread_id,NULL,&filho,NULL);
+   sleep(10);
+  printf("Processo-Pai: Encerrando Execucao.\n");  
+}
+
+/*************************************************************************************************** 
+prog03.c - Exemplo de como utilizar a instrucao pthread_create e pthread_join
+****************************************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+void* filho (void* null) {
+   printf("Processo-Filho: Iniciando Execucao.\n");
+   sleep(5);
+   printf("Processo-Filho: Encerrando Execucao.\n");	
+}
+
+main() {
+  pthread_t	thread_id;
+  system("clear");
+  printf("Processo-Pai: Iniciando Execucao.\n");
+  pthread_create(&thread_id,NULL,&filho,NULL);
+  pthread_join(thread_id,NULL);;
+  printf("Processo-Pai: Encerrando Execucao.\n");  
+}
+
+/*************************************************************************************************** 
+prog04.c - Exemplo de como utilizar a instrucao pthread_create e pthread_join
+****************************************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+void* filho (void* mensagem) {
+   printf("Processo-Filho: Iniciando Execucao.\n");
+   printf("Processo-Filho: Recebendo a mensagem \"%s\".\n", mensagem);
+   sleep(5);
+   printf("Processo-Filho: Encerrando Execucao.\n");	
+}
+
+main() {
+  pthread_t	thread_id;
+  system("clear");
+  printf("Processo-Pai: Iniciando Execucao.\n");
+  pthread_create(&thread_id,NULL,&filho,"Oi Mundo");
+  pthread_join(thread_id,NULL);
+  printf("Processo-Pai: Encerrando Execucao.\n");  
+}
+
+/*************************************************************************************************** 
+prog05.c - Exemplo de como utilizar a instrucao pthread_create e pthread_join
+****************************************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+void* filho (void* mensagem) {
+   printf("Processo-Filho: Iniciando Execucao.\n");
+   printf("Processo-Filho: Recebendo a mensagem \"%s\".\n", mensagem);
+   printf("Processo-Filho: Encerrando Execucao.\n");	
+}
+
+main() {
+  pthread_t	thread_id;
+  char mensagem[80]="MSG do Proc. Pai";
+  system("clear");
+  printf("Processo-Pai: Iniciando Execucao.\n");
+  pthread_create(&thread_id,NULL,&filho,&mensagem);
+  pthread_join(thread_id,NULL);
+  printf("Processo-Pai: Encerrando Execucao.\n");  
+}
+
+/*************************************************************************************************** 
+prog06.c - Exemplo de como utilizar a instrucao pthread_create e pthread_join
+****************************************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <string.h>
+
+void* filho (void* mensagem) {
+   printf("Processo-Filho: Iniciando Execucao.\n");
+   printf("Processo-Filho: Recebendo a mensagem \"%s\".\n", mensagem);
+   strcpy(mensagem,"MSG do Proc. Filho");
+   printf("Processo-Filho: A mensagem agora eh \"%s\".\n", mensagem);
+   printf("Processo-Filho: Encerrando Execucao.\n");	
+}
+
+main() {
+  pthread_t	thread_id;
+  char mensagem[80]="MSG do Proc. Pai";
+  system("clear");
+  printf("Processo-Pai: Iniciando Execucao.\n");
+  printf("Processo-Pai: Enviando a mensagem \"%s\".\n", mensagem);
+  pthread_create(&thread_id,NULL,&filho,&mensagem);
+  pthread_join(thread_id,NULL);
+  printf("Processo-Pai: A mensagem agora eh \"%s\".\n", mensagem);
+  printf("Processo-Pai: Encerrando Execucao.\n");  
+}
+
+
+/*************************************************************************************************** 
+prog07.c - Exemplo de como utilizar a instrucao pthread_create e pthread_join
+****************************************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <string.h>
+
+char mensagem[80]="MSG do Proc. Pai";
+
+void* filho () {
+   printf("Processo-Filho: Iniciando Execucao.\n");
+   printf("Processo-Filho: A mensagem agora eh \"%s\".\n", mensagem);
+   strcpy(mensagem,"MSG do Proc. Filho");
+   printf("Processo-Filho: A mensagem agora eh \"%s\".\n", mensagem);
+   printf("Processo-Filho: Encerrando Execucao.\n");	
+}
+
+main() {
+  pthread_t	thread_id;
+  system("clear");
+  printf("Processo-Pai: Iniciando Execucao.\n");
+  printf("Processo-Pai: A mensagem agora eh \"%s\".\n", mensagem);
+    pthread_create(&thread_id,NULL,&filho,NULL);
+  pthread_join(thread_id,NULL);
+  printf("Processo-Pai: A mensagem agora eh \"%s\".\n", mensagem);
+  printf("Processo-Pai: Encerrando Execucao.\n");  
+}

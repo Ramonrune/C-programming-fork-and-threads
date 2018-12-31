@@ -10,12 +10,12 @@
 ```c
 
   printf("1 - CREATE PROCESS\n");
-	printf("2 - UPDATE PROCESSO\n");
-	printf("3 - REMOVE PROCESS\n");
-	printf("4 - LIST PROCESS TABLE\n");
-	printf("5 - CLEAN PROCESS TABLE\n");
-	printf("6 - STAGING PROCESSES\n");
-	printf("7 - CREDITS\n");
+  printf("2 - UPDATE PROCESSO\n");
+  printf("3 - REMOVE PROCESS\n");
+  printf("4 - LIST PROCESS TABLE\n");
+  printf("5 - CLEAN PROCESS TABLE\n");
+  printf("6 - STAGING PROCESSES\n");
+  printf("7 - CREDITS\n");
   printf("8 - EXIT\n");
   ```
 Tries to simulate processes management<br>

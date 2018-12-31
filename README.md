@@ -18,5 +18,5 @@
   printf("7 - CREDITS\n");
   printf("8 - EXIT\n");
   ```
-Tries to simulate processes management<br>
+Tries to simulate process management<br>
 <img src="https://www.howtogeek.com/wp-content/uploads/2012/03/top.png"/>

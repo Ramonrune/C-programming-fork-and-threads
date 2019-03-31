@@ -1,5 +1,7 @@
 # Forks, threads and processes
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b79570c5a4134d7e98e607d8b300ff96)](https://app.codacy.com/app/Ramonrune/fork-threads-processes?utm_source=github.com&utm_medium=referral&utm_content=Ramonrune/fork-threads-processes&utm_campaign=Badge_Grade_Dashboard)
+
 ## Fork
 <img src="http://www.csl.mtu.edu/cs4411.ck/www/NOTES/process/fork/fork-5.jpg"/>
 
